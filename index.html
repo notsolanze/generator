@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        // Add your custom colors here
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Portfolio Generator</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Customize Your Portfolio</h2>
+                
+                <!-- Theme Toggle -->
+                <div class="mb-6">
+                    <label class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input type="checkbox" id="themeToggle" class="sr-only">
+                            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                            <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                        </div>
+                        <div class="ml-3 text-gray-700 dark:text-gray-300">Dark Mode</div>
+                    </label>
+                </div>
+
+                <!-- Sections -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium mb-2 text-gray-900 dark:text-white">Portfolio Sections</h3>
+                    <div id="sectionSelector" class="space-y-2 max-h-[400px] overflow-y-auto pr-2">
+                        <!-- Sections will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Style Options -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Accent Color</label>
+                        <input type="color" id="accentColor" value="#8B5CF6" class="mt-1 block w-full h-10 rounded-md">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Font Family</label>
+                        <select id="fontFamily" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white">
+                            <option value="Inter">Inter</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Poppins">Poppins</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Open Sans">Open Sans</option>
+                            <option value="Lato">Lato</option>
+                            <option value="system-ui">System UI</option>
+                            <option value="serif">Serif</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Layout Style</label>
+                        <select id="layoutStyle" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white">
+                            <option value="modern">Modern</option>
+                            <option value="minimal">Minimal</option>
+                            <option value="classic">Classic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="mt-6 w-full bg-violet-600 text-white px-4 py-2 rounded-md hover:bg-violet-700 transition-colors">
+                    Generate Portfolio
+                </button>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Preview</h2>
+                    <button id="fullscreenBtn" class="bg-violet-600 text-white px-3 py-1.5 rounded-md hover:bg-violet-700 transition-colors">
+                        <i class="fas fa-expand mr-2"></i>Fullscreen
+                    </button>
+                </div>
+                <div id="preview" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden preview-container">
+                    <iframe id="previewFrame" class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Editor Section -->
+        <div class="mt-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4 text-white">Generated Code</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <h3 class="font-semibold mb-2 text-gray-300">HTML</h3>
+                    <div id="htmlEditor" class="h-[400px] rounded-md overflow-hidden"></div>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2 text-gray-300">CSS</h3>
+                    <div id="cssEditor" class="h-[400px] rounded-md overflow-hidden"></div>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2 text-gray-300">JavaScript</h3>
+                    <div id="jsEditor" class="h-[400px] rounded-md overflow-hidden"></div>
+                </div>
+            </div>
+            <button id="updatePreviewBtn" class="mt-4 bg-violet-600 text-white px-4 py-2 rounded-md hover:bg-violet-700 transition-colors">
+                Update Preview
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.1/min/vs/loader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
