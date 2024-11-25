@@ -1504,6 +1504,7 @@ function generateJS() {
     `;
 }
 
+
 // Initialize Monaco Editor
 function initializeMonacoEditor() {
     require.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.1/min/vs' } });
@@ -1579,14 +1580,36 @@ function minimizeEditor() {
 }
 
 function updatePreview() {
-    const htmlCode = window.htmlEditor.getValue();
-    const cssCode = window.cssEditor.getValue();
-    const jsCode = window.jsEditor.getValue();
+    const html = htmlEditor.getValue();
+    const css = cssEditor.getValue();
+    const js = jsEditor.getValue();
 
-    // Implement your preview update logic here
-    console.log('Updating preview with:', { htmlCode, cssCode, jsCode });
-    // You can update an iframe or a preview section with the generated code
+    const previewContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                ${css}
+            </style>
+        </head>
+        <body>
+            ${html}
+            <script>${js}</script>
+        </body>
+        </html>
+    `;
+
+    previewFrame.srcdoc = previewContent;
 }
+
 
 // Initialize everything when the DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -1595,4 +1618,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
     initializeMonacoEditor();
 });
+
 
