@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Generator by lanze</title>
+    <title>Professional Portfolio Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -100,24 +100,59 @@
 
         <!-- Code Editor Section -->
         <div class="mt-6 bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 class="text-xl font-semibold mb-4 text-white">Generated Code</h2>
+            <h2 class="text-xl font-semibold mb-4 text-white">Edit the codes here</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                    <h3 class="font-semibold mb-2 text-gray-300">HTML</h3>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold text-gray-300">HTML</h3>
+                        <button class="maximize-btn text-white hover:text-gray-300 focus:outline-none" data-editor="html">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
                     <div id="htmlEditor" class="h-[400px] rounded-md overflow-hidden"></div>
                 </div>
                 <div>
-                    <h3 class="font-semibold mb-2 text-gray-300">CSS</h3>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold text-gray-300">CSS</h3>
+                        <button class="maximize-btn text-white hover:text-gray-300 focus:outline-none" data-editor="css">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
                     <div id="cssEditor" class="h-[400px] rounded-md overflow-hidden"></div>
                 </div>
                 <div>
-                    <h3 class="font-semibold mb-2 text-gray-300">JavaScript</h3>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold text-gray-300">JavaScript</h3>
+                        <button class="maximize-btn text-white hover:text-gray-300 focus:outline-none" data-editor="js">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
                     <div id="jsEditor" class="h-[400px] rounded-md overflow-hidden"></div>
                 </div>
             </div>
             <button id="updatePreviewBtn" class="mt-4 bg-violet-600 text-white px-4 py-2 rounded-md hover:bg-violet-700 transition-colors">
                 Update Preview
             </button>
+        </div>
+        
+        <div id="maximizedEditorOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div id="maximizedEditorContainer" class="bg-gray-800 w-full h-full p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="maximizedEditorTitle" class="text-xl font-semibold text-white"></h3>
+                    <button id="minimizeBtn" class="text-white hover:text-gray-300 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="maximizedEditor" class="h-[calc(100vh-120px)] rounded-md overflow-hidden"></div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
