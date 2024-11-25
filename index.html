@@ -84,18 +84,28 @@
                 </button>
             </div>
 
-            <!-- Preview Section -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Preview</h2>
-                    <button id="fullscreenBtn" class="bg-violet-600 text-white px-3 py-1.5 rounded-md hover:bg-violet-700 transition-colors">
-                        <i class="fas fa-expand mr-2"></i>Fullscreen
-                    </button>
-                </div>
-                <div id="preview" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden preview-container">
-                    <iframe id="previewFrame" class="w-full h-full"></iframe>
-                </div>
+           <!-- Preview Section -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Preview</h2>
+                <button id="fullscreenBtn" class="bg-violet-600 text-white px-3 py-1.5 rounded-md hover:bg-violet-700 transition-colors">
+                    <i class="fas fa-expand mr-2"></i>Fullscreen
+                </button>
             </div>
+            <div id="preview" class="iphone-frame">
+                <div class="dynamic-island"></div>
+                <div class="iphone-screen">
+                    <iframe id="previewFrame"></iframe>
+                </div>
+                <div class="home-indicator"></div>
+                <div class="volume-up"></div>
+                <div class="volume-down"></div>
+                <div class="silent-switch"></div>
+                <div class="power-button"></div>
+    </div>
+</div>
+
+
         </div>
 
         <!-- Code Editor Section -->
@@ -160,4 +170,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
